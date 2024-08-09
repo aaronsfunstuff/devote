@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Fira Code', monospace;
     background-color: #121212;
     color: #e0e0e0;
     line-height: 1.6;
@@ -69,11 +69,12 @@ main {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     max-width: 700px;
     margin: auto;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .post:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+    transform: scale(1.02);
 }
 
 .post-header {
@@ -149,6 +150,47 @@ main {
     font-weight: bold;
 }
 
+.shares {
+    margin-top: 10px;
+    color: #b0b0b0;
+}
+
+.share-count {
+    font-weight: bold;
+}
+
+.comments-section {
+    padding: 10px 15px;
+    border-top: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    resize: none;
+}
+
+.comment-btn {
+    margin-top: 10px;
+    background-color: #333;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comment-btn:hover {
+    background-color: #444;
+}
+
 footer {
     text-align: center;
     padding: 20px;
@@ -192,3 +234,4 @@ footer p {
         font-size: 1.3em;
     }
 }
+
