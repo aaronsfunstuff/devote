@@ -6,6 +6,7 @@
     <title>DevNet - Posts</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
@@ -22,24 +23,107 @@
     
     <main>
         <section class="post-feed">
-            <!-- Example Post -->
             <article class="post">
                 <header class="post-header">
-                    <img src="profile-pic1.jpg" alt="Profile Picture" class="profile-pic">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6840/6840541.png" alt="Profile Picture" class="profile-pic">
                     <div class="user-info">
                         <h2 class="username">DevMaster</h2>
                         <p class="post-time">1 hour ago</p>
                     </div>
                 </header>
-                <img src="post-image1.jpg" alt="Post Image" class="post-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXwYNoi6e4vuHsFFPOXrOIHMha2C1JbPSiQ&s" alt="Post Image" class="post-image">
                 <div class="post-actions">
-                    <button class="action-btn"><i class="fas fa-heart"></i></button>
-                    <button class="action-btn"><i class="fas fa-comment"></i></button>
-                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                    <button class="action-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn" onclick="toggleComments(this)"><i class="fas fa-comment"></i></button>
+                    <button class="action-btn" onclick="toggleSave(this)"><i class="fas fa-bookmark"></i></button>
+                    <button class="action-btn" onclick="incrementShareCount(this)"><i class="fas fa-share"></i></button>
                 </div>
                 <div class="post-details">
                     <p class="likes">150 likes</p>
-                    <p class="description"><strong>DevMaster:</strong> Excited about the new project! #coding #devlife</p>
+                    <p class="description"><strong>DevMaster:</strong> <span class="typing-text" data-text="Excited about the new project! #coding #devlife"></span></p>
+                    <p class="shares">Shares: <span class="share-count">0</span></p>
+                </div>
+                <div class="comments-section">
+                    <textarea placeholder="Add a comment..." class="comment-input"></textarea>
+                    <button class="comment-btn">Post</button>
+                </div>
+            </article>
+          
+            <article class="post">
+                <header class="post-header">
+                    <img src="https://i.pinimg.com/236x/d7/f1/35/d7f135f4dd92e192a8373a0652d8b879.jpg" alt="Profile Picture" class="profile-pic">
+                    <div class="user-info">
+                        <h2 class="username">CodeNinja</h2>
+                        <p class="post-time">2 hours ago</p>
+                    </div>
+                </header>
+                <img src="https://i.ytimg.com/vi/5uXYIOPvTzw/maxresdefault.jpg" alt="Post Image" class="post-image">
+                <div class="post-actions">
+                    <button class="action-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn" onclick="toggleComments(this)"><i class="fas fa-comment"></i></button>
+                    <button class="action-btn" onclick="toggleSave(this)"><i class="fas fa-bookmark"></i></button>
+                    <button class="action-btn" onclick="incrementShareCount(this)"><i class="fas fa-share"></i></button>
+                </div>
+                <div class="post-details">
+                    <p class="likes">200 likes</p>
+                    <p class="description"><strong>CodeNinja:</strong> <span class="typing-text" data-text="Just completed an amazing tutorial! #programming #tech"></span></p>
+                    <p class="shares">Shares: <span class="share-count">0</span></p>
+                </div>
+                <div class="comments-section">
+                    <textarea placeholder="Add a comment..." class="comment-input"></textarea>
+                    <button class="comment-btn">Post</button>
+                </div>
+            </article>
+
+            <article class="post">
+                <header class="post-header">
+                    <img src="https://cdn.devdojo.com/users/August2020/devskulls1.jpg" alt="Profile Picture" class="profile-pic">
+                    <div class="user-info">
+                        <h2 class="username">ScriptGuru</h2>
+                        <p class="post-time">3 hours ago</p>
+                    </div>
+                </header>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM3A0ckeEzWKwzIKERj5DSITKL4eYzNkWdJw&s" alt="Post Image" class="post-image">
+                <div class="post-actions">
+                    <button class="action-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn" onclick="toggleComments(this)"><i class="fas fa-comment"></i></button>
+                    <button class="action-btn" onclick="toggleSave(this)"><i class="fas fa-bookmark"></i></button>
+                    <button class="action-btn" onclick="incrementShareCount(this)"><i class="fas fa-share"></i></button>
+                </div>
+                <div class="post-details">
+                    <p class="likes">300 likes</p>
+                    <p class="description"><strong>ScriptGuru:</strong> <span class="typing-text" data-text="Learning new frameworks and loving it! #webdev #innovation"></span></p>
+                    <p class="shares">Shares: <span class="share-count">0</span></p>
+                </div>
+                <div class="comments-section">
+                    <textarea placeholder="Add a comment..." class="comment-input"></textarea>
+                    <button class="comment-btn">Post</button>
+                </div>
+            </article>
+
+            <article class="post">
+                <header class="post-header">
+                    <img src="https://www.pngitem.com/pimgs/m/671-6716032_developer-profile-picture-transparent-hd-png-download.png" alt="Profile Picture" class="profile-pic">
+                    <div class="user-info">
+                        <h2 class="username">TechSavvy</h2>
+                        <p class="post-time">4 hours ago</p>
+                    </div>
+                </header>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWHBvF8VFdfpAm_Mxnt8zrPTPfJI8_qheeyw&s" alt="Post Image" class="post-image">
+                <div class="post-actions">
+                    <button class="action-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn" onclick="toggleComments(this)"><i class="fas fa-comment"></i></button>
+                    <button class="action-btn" onclick="toggleSave(this)"><i class="fas fa-bookmark"></i></button>
+                    <button class="action-btn" onclick="incrementShareCount(this)"><i class="fas fa-share"></i></button>
+                </div>
+                <div class="post-details">
+                    <p class="likes">250 likes</p>
+                    <p class="description"><strong>TechSavvy:</strong> <span class="typing-text" data-text="Just built a new feature for my app. #devlife #tech"></span></p>
+                    <p class="shares">Shares: <span class="share-count">0</span></p>
+                </div>
+                <div class="comments-section">
+                    <textarea placeholder="Add a comment..." class="comment-input"></textarea>
+                    <button class="comment-btn">Post</button>
                 </div>
             </article>
         </section>
